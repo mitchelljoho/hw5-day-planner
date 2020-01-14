@@ -1,0 +1,18 @@
+#header-card{
+    height: 20%;
+    margin-top: 5%;
+    text-align: center;
+    border-bottom: 8px solid black;
+}
+
+
+/* hour card styles */
+.hour-card{
+    height: 100px;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+}
+.save-button{
+    height: 100px;
+    background-color: lightblue;
+}

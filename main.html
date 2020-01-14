@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="template.css">
+    <title>Day Planner</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+             <div class="col-8 center-col" id="header-card">
+                 <h1 style="font-size: 50pt;">Work Day Scheduler</h1>
+                 <p>This website allows you to log simple to-do tasks for every hour of the day with dynamically updated colors to show whether a certain time has passed or not, and persistant local storage.</p>
+             </div>
+        </div>
+
+        <div class="row fit-content">
+            <div class="col-8 center-col" id="content-card">
+                <!-- dynamically updated hourly chart -->
+                <div class="hour-card">
+                    <button class="col-1 save-button" value="9">Save</button>
+                    <input type="text" class="col-10"></input>
+                    <div class="col-1" style="text-align: right;">10:45</div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
