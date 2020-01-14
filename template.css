@@ -39,7 +39,7 @@ html, body {
    padding: 15px;
    height: 100%;
    margin: auto;
-   border: 1px solid red;
+   /* border: 1px solid red; */
  }
 /* horizontally centers a column */
 .center-col {

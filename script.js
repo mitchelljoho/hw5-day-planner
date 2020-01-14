@@ -15,6 +15,14 @@ var timeArr = ["9", "10", "11", "12", "1", "2", "3", "4", "5"];
 var schedule = JSON.parse( localStorage.getItem("schedule") );
 // -----------------------------------------------------------------
 
+// sets current date
+var timeCard = document.getElementById("time");
+var currentTime = moment().format('dddd MMMM Do');
+timeCard.textContent = currentTime;
+
+// get current hour
+var curHour = moment().format('h');
+
 // draws all time cards from the local storage
 function drawCards() {
     for(var i = 0; i < (timeArr.length); i++){
@@ -31,6 +39,15 @@ function drawCards() {
         inputCard.setAttribute("id", "text");
         inputCard.setAttribute("class", "col-10");
         // set background color depending on the time of day
+        var timeIndex = timeArr.indexOf(curHour);
+        if(timeIndex > i){
+            inputCard.setAttribute("style", "background-color: grey");
+        } else if(timeIndex == i){
+            inputCard.setAttribute("style", "background-color: red");
+        } else {
+            inputCard.setAttribute("style", "background-color: green");
+        }
+
         inputCard.value = schedule[i];
 
         var timeCard = document.createElement("div");
@@ -65,7 +82,7 @@ clearButton.addEventListener("click", function(e) {
     schedule = ["", "", "", "", "", "", "", "", ""];
     localStorage.setItem("schedule", JSON.stringify(schedule));
     hoursCard.innerHTML = "";
-    drawCards();
+    location.reload();
 });
 
 drawCards();
