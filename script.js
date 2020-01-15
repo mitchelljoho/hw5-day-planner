@@ -23,6 +23,9 @@ timeCard.textContent = currentTime;
 // get current hour
 var curHour = moment().format('h');
 
+//get time until end of the day
+var hoursUntilEnd = moment().endOf('day').fromNow().split(" ")[1];
+
 // draws all time cards from the local storage
 function drawCards() {
     for(var i = 0; i < (timeArr.length); i++){
@@ -40,11 +43,11 @@ function drawCards() {
         inputCard.setAttribute("class", "col-10");
         // set background color depending on the time of day
         var timeIndex = timeArr.indexOf(curHour);
-        if(timeIndex > i && timeIndex != -1){
+        if(timeIndex > i && hoursUntilEnd >= 7){
             inputCard.setAttribute("style", "background-color: grey");
-        } else if(timeIndex == i && timeIndex != -1){
+        } else if(timeIndex == i && hoursUntilEnd >= 7){
             inputCard.setAttribute("style", "background-color: red");
-        } else if(timeIndex < i && timeIndex != -1){
+        } else if(timeIndex < i && hoursUntilEnd >= 7){
             inputCard.setAttribute("style", "background-color: green");
         } else {
             inputCard.setAttribute("style", "background-color: grey");
