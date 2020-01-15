@@ -44,10 +44,11 @@ function drawCards() {
             inputCard.setAttribute("style", "background-color: grey");
         } else if(timeIndex == i){
             inputCard.setAttribute("style", "background-color: red");
-        } else if(){
+        } else if(timeIndex < i){
             inputCard.setAttribute("style", "background-color: green");
+        } else {
+            inputCard.setAttribute("style", "background-color: grey");
         }
-        if(timeIndex === -1){inputCard.setAttribute("style", "background-color: grey");}
 
         inputCard.value = schedule[i];
 
