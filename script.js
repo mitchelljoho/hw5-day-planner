@@ -40,11 +40,11 @@ function drawCards() {
         inputCard.setAttribute("class", "col-10");
         // set background color depending on the time of day
         var timeIndex = timeArr.indexOf(curHour);
-        if(timeIndex > i){
+        if(timeIndex > i && timeIndex != -1){
             inputCard.setAttribute("style", "background-color: grey");
-        } else if(timeIndex == i){
+        } else if(timeIndex == i && timeIndex != -1){
             inputCard.setAttribute("style", "background-color: red");
-        } else if(timeIndex < i){
+        } else if(timeIndex < i && timeIndex != -1){
             inputCard.setAttribute("style", "background-color: green");
         } else {
             inputCard.setAttribute("style", "background-color: grey");
