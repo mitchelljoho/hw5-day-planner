@@ -43,12 +43,14 @@ function drawCards() {
         inputCard.setAttribute("class", "col-10");
         // set background color depending on the time of day
         var timeIndex = timeArr.indexOf(curHour);
-        if(timeIndex > i && hoursUntilEnd >= 7){
-            inputCard.setAttribute("style", "background-color: grey");
-        } else if(timeIndex == i && hoursUntilEnd >= 7){
-            inputCard.setAttribute("style", "background-color: red");
-        } else if(timeIndex < i && hoursUntilEnd >= 7){
-            inputCard.setAttribute("style", "background-color: green");
+        if(hoursUntilEnd >= 7){
+            if(timeIndex > i){
+                inputCard.setAttribute("style", "background-color: grey");
+            } else if(timeIndex == i){
+                inputCard.setAttribute("style", "background-color: red");
+            } else if(timeIndex < i){
+                inputCard.setAttribute("style", "background-color: green");
+            }
         } else {
             inputCard.setAttribute("style", "background-color: grey");
         }
